@@ -38,3 +38,8 @@ This is just a regular notebook, and does some simple analytics
 Install yourself metabase. https://www.metabase.com/docs/latest/operations-guide/running-metabase-on-docker.html
 will show you how to do it, it's really straightforward to run in a docker container. When metabase asks for the host, 
 make sure that you put it to host.docker.internal, because localhost isn't going to work. 
+
+
+### Data viz
+
+Just use this for D3 honestly, it's a pain in the ass to set up locally: https://jsfiddle.net/4ujb1r9d/3/
