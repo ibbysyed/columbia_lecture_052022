@@ -1,0 +1,90 @@
+#here's an interesting interview question that I've asked before in data engineering interviews: 
+
+'''
+The premise behind it is that the user should be able to take an event stream and understand how to create tables from it
+
+Assume you have a payload that needs to be loaded into a database, 
+as listed below. Thousandss records are entered into the database every hour, 
+and you want to transform the data into a series of tables in a SQL database that 
+are normalized and can be processed quickly and efficiently. 
+Give a detailed explanation  on how you would split up the data, 
+and how each table would look. Assume you have access to hash functions. 
+
+'''
+
+payload = 
+
+[
+    {
+    'date': '2020-01-01 00:00:00' ,
+    'hyperlink': 'www.delighted.com/tspdfsdf343/sdfodf112',
+    
+        'person_properties': 
+        {
+            'name': 'joe bob', 
+            'date_created': 2020-01-01 00:00:00, 
+            'email': 'joe.bob@gmail.com'
+        },
+
+        'primary_question': ‘How was your experience with the Delivery?’
+        'type_of_question': STRING,
+        'primary_answer': 'I loved peter and jane and how they brought my couch through my apartment, up a flight of stairs….'
+
+        'additional_answers': 
+            {'Question_1': 'question_here',
+            'Answer_1: 'answer_here',
+            'Question_2: 'question_here', 
+            'Answer_2': 'answer_here',
+            ... }
+    }, 
+    {
+    'date': '2020-01-01 00:00:01' ,
+        'hyperlink': 'www.delighted.com/tspdfsdf53/sdfodf2',
+    
+        'person_properties': 
+        {
+            'name': 'paul bob', 
+            'date_created': 2020-01-01 00:00:00, 
+            'email': 'paul.bob@gmail.com'
+        },
+
+        'primary_question': ‘How was your experience with the Delivery?’
+        'type_of_question': STRING,
+        'primary_answer': 'stuff here'
+
+        'additional_answers': 
+            {'Question_1': 'question_here',
+            'Answer_1: 'answer_here',
+            'Question_2: 'question_here', 
+            'Answer_2': 'answer_here',
+            ... }
+    }, 
+    {
+    'date': '2020-01-03 00:00:01' ,
+        'hyperlink': 'www.survey.com/tspdsdfpoasrfdf42/sdfodf3',
+        
+        'person_properties': 
+            {
+            'name': 'jill bob', 
+            'date_created': 2019-12-01 00:00:00, 
+            'email': 'joe.jill@gmail.com'
+            },
+
+        'primary_question': ‘How was your experience with the Delivery?’
+        'primary_answer': 'stuff here'
+        'type_of_question': STRING,
+        'additional_answers': 
+            {'Question_1': 'question_here',
+            'Answer_1: 'answer_here',
+            'Question_2: 'question_here', 
+            'Answer_2': 'answer_here',
+            ... }
+    }
+]
+
+'''
+I won't actually outline the right answer here (there isn't just one) but the things you want to look
+for include whether or not they notice the "additional answers" payload is a list of questions, and how
+they would handle joining the data together (creating reference keys)
+
+'''
